@@ -35,7 +35,7 @@ public class Tweets {
 	public void postTweet() throws InterruptedException {
 		RestAssured.baseURI = "https://api.twitter.com/1.1/statuses";
 		Response res = given().auth().oauth(consumerKey, consumerSecret, accessToken, secretToken)
-				.queryParam("status", "Hello Twitter").when().post("update.json").then().assertThat().statusCode(200)
+				.queryParam("status", "Hello Twitter1").when().post("update.json").then().assertThat().statusCode(200)
 				.extract().response();
 
 		String jsonData = res.asString();
